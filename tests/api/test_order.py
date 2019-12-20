@@ -1804,7 +1804,7 @@ def test_order_update_shipping_clear_shipping_method(
     assert data["order"]["id"] == order_id
 
     order.refresh_from_db()
-    assert order.shipping_method is None
+    assert order.shipping_method == "USPS"
     assert order.shipping_price == zero_taxed_money()
     assert order.shipping_method_name is None
 
