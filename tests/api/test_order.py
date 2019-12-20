@@ -1795,7 +1795,7 @@ def test_order_update_shipping_clear_shipping_method(
 
     query = ORDER_UPDATE_SHIPPING_QUERY
     order_id = graphene.Node.to_global_id("Order", order.id)
-    variables = {"order": order_id, "shippingMethod": None}
+    variables = {"order": order_id, "shippingMethod": "USPS"}
     response = staff_api_client.post_graphql(
         query, variables, permissions=[permission_manage_orders]
     )
